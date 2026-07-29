@@ -35,7 +35,7 @@ export default {
 
             // Rate Limit de 2 segundos na memória RAM
             const lastTime = rateLimitMap.get(userKey);
-            if (lastTime && (now - lastTime < 2000)) {
+            if (lastTime && (now - lastTime < 0100)) {
                 return jsonResponse({ success: false, message: "Espere um pouco antes de enviar outra mensagem." }, 429);
             }
             rateLimitMap.set(userKey, now);
